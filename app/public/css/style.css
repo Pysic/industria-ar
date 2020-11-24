@@ -1,0 +1,154 @@
+.a-enter-vr{
+    display: none;
+}
+#initBox{
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    width: calc(100% - 4vh);
+    height: 10%;
+    margin: 2vh;
+    background-color:  rgba(17, 26, 138, 0.4);
+    border-radius: 6px;
+    line-height: 10vh;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 4vh;
+    transform: translateY(calc(-100% - 4vh));
+    color: white;
+    -webkit-text-stroke: 2px black;
+}
+.boxInfo{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    --translate: 150%;
+    transform: translate(var(--translate));
+    font-family: fantasy;
+    font-size: 4vh;
+    width: 30%;
+    transition: 1s;
+}
+.lineInfo{
+    margin: 4px;
+    padding: 4px;
+    border-radius: 2px;
+    box-shadow: -2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    color: white;
+    width: 100%;
+}
+.txtValue{
+    display: inline-block;
+    -webkit-text-stroke: 2px darkslategray;
+}
+.icoValue{
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 4px;
+    margin-right: 4px;
+    width: 5.5vh;
+    height: 5.5vh;
+    text-align: center;
+    -webkit-text-stroke: 1px darkslategray;
+}
+#tensao, #corrente, #potencia, #frequencia{
+    --colorType:green;
+    --animationType: none;
+    background-image: linear-gradient(to right, var(--colorType), transparent);
+    animation: var(--animationType);
+}
+#chart-svg{
+    fill: white;
+    width: 12vw;
+    height: 7vh;
+    transform: translate(25%);
+}
+#chart-menu{
+    transform: translate(36%);
+    background-color: rgba(17, 26, 138, 0.75);
+}
+#chart-menu:active{
+    transform: translate(36%) scale(1.1);
+    transition: 0.2s;
+}
+#alert{
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 15%;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    background-color: red;
+    transform: translate(-50%, -50%);
+    animation: degrade 1s infinite;
+    color: white;
+    text-align: center;
+    line-height: 25vw;
+    font-family: fantasy;
+    font-size: 8vh;
+}
+#chart{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    --animationType: none;
+    animation: var(--animationType);
+}
+.ct-chart{
+    height: 20%;
+    background-color: beige;
+}
+.chart-title{
+    height: 5%;
+    width: 100%;
+    background-color: brown;
+    color: white;
+    font-family: fantasy;
+    font-size: 4vh;
+    -webkit-text-stroke: 2px black;
+    padding-left: 4px;
+}
+#close-chart{
+    position: absolute;
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 4px;
+    margin-right: 4px;
+    width: 2.5vh;
+    height: 2.5vh;
+    text-align: center;
+    left: 100%;
+    color: white;
+    line-height: 2.6vh;
+    -webkit-text-stroke: 0px;
+    font-size: 3vh;
+    font-family: monospace;
+    transform: translate(-110%, 10%);
+}
+@keyframes blink{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+@keyframes degrade{
+    0% {background-color: red;}
+    50% {background-color: darkred;}
+    100% {background-color: red;}
+}
+
+@keyframes open-chart{
+    0% {left: 100%;}
+    100% {left: 0%;}
+}
+
+@keyframes close-chart{
+    0% {left: 0%;}
+    100% {left: 100%;}
+}
